@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Recharge App</string>
+    <string name="recharge_app">Recharge App</string>
+    <string name="r_alis_e_par_haythem_saad_2si_polytech_uc">Réalisée par Haythem Saad - 2SI Polytech UC</string>
+    <string name="imagefournisseurs">imagefournisseurs</string>
+    <string name="textview">TextView</string>
+    <string name="avatar_image">avatar image</string>
+</resources>

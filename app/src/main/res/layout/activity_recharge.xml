@@ -39,8 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Saisir votre numéro de Tél: (8 chiffres)"
-        android:textColor="#4E1359"
+        android:text="Saisir votre numéro de Tél:"
+        android:textColor="#32439E"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.35" />
 
     <EditText
-        android:id="@+id/txtcode"
+        android:id="@+id/txtcode1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -76,18 +76,18 @@
         android:inputType="number"
         android:minHeight="48dp"
         android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/lblcommande"
+        app:layout_constraintBottom_toTopOf="@+id/lblcode2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/lblcommande"
+        android:id="@+id/lblcode2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recharger votre ligne:"
-        android:textColor="#4E1359"
+        android:textColor="#32439E"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,12 +97,27 @@
         app:layout_constraintVertical_bias="0.637" />
 
     <TextView
-        android:id="@+id/lblcode"
+        android:id="@+id/lblconsult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consulter votre solde:"
+        android:textColor="#32439E"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.771" />
+
+    <TextView
+        android:id="@+id/lblcode1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Entrer votre code de recharge:"
-        android:textColor="#4E1359"
+        android:textColor="#32439E"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Votre ligne est:"
-        android:textColor="#4E1359"
+        android:textColor="#32439E"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,17 +143,18 @@
 
     <TextView
         android:id="@+id/txtcommande"
-        android:layout_width="215dp"
-        android:layout_height="33dp"
+        android:layout_width="198dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
         android:hint="Commande de recharge"
         android:textColorHint="#757575"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/lblconsult"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.723" />
+        app:layout_constraintTop_toBottomOf="@+id/lblcode2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btncommande"
@@ -149,10 +165,25 @@
         android:text="Recharger"
         app:layout_constraintBottom_toTopOf="@+id/lblconsult"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txtcommande"
-        app:layout_constraintTop_toBottomOf="@+id/lblcommande"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintTop_toBottomOf="@+id/lblcode2"
+        app:layout_constraintVertical_bias="0.406" />
+
+    <TextView
+        android:id="@+id/txtconsult"
+        android:layout_width="203dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:hint="Commande consultation"
+        android:textColorHint="#757575"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblconsult"
+        app:layout_constraintVertical_bias="0.048" />
 
     <Button
         android:id="@+id/btnconsult"
@@ -162,39 +193,9 @@
         android:text="Consulter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/txtconsult"
         app:layout_constraintTop_toBottomOf="@+id/lblconsult"
-        app:layout_constraintVertical_bias="0.087" />
-
-    <TextView
-        android:id="@+id/lblconsult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Consulter votre solde:"
-        android:textColor="#4E1359"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
-
-    <TextView
-        android:id="@+id/txtconsult"
-        android:layout_width="212dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="27dp"
-        android:hint="Commande consultation"
-        android:textColorHint="#757575"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblconsult"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.085" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

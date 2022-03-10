@@ -89,13 +89,13 @@ public class RechargeActivity extends AppCompatActivity {
         _btncommande.setOnClickListener(view -> {
             cmd_envoi = _txtcommande.getText().toString();
             Intent i1 = new Intent(Intent.ACTION_DIAL);
-            i1.setData(Uri.parse("tel:" + cmd_envoi));
+            i1.setData(Uri.parse("tel:" + Uri.encode(cmd_envoi)));
             startActivity(i1);
         });
         _btnconsult.setOnClickListener(view -> {
             code_envoi = _txtconsult.getText().toString();
             Intent i2 = new Intent(Intent.ACTION_DIAL);
-            i2.setData(Uri.parse("tel:" + code_envoi));
+            i2.setData(Uri.parse("tel:" + Uri.encode(code_envoi)));
             startActivity(i2);
         });
     }

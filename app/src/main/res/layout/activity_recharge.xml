@@ -130,29 +130,27 @@
         android:id="@+id/txtcommande"
         android:layout_width="215dp"
         android:layout_height="33dp"
-        android:hint="Commande de recharge"
+        android:hint="Commande recharge"
         android:textColorHint="#757575"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.723" />
+        app:layout_constraintVertical_bias="0.722" />
 
     <Button
         android:id="@+id/btncommande"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:text="Recharger"
         app:layout_constraintBottom_toTopOf="@+id/lblconsult"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toEndOf="@+id/txtcommande"
         app:layout_constraintTop_toBottomOf="@+id/lblcommande"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <Button
         android:id="@+id/btnconsult"
@@ -162,7 +160,7 @@
         android:text="Consulter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toEndOf="@+id/txtconsult"
         app:layout_constraintTop_toBottomOf="@+id/lblconsult"
         app:layout_constraintVertical_bias="0.087" />
@@ -192,7 +190,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblconsult"
         app:layout_constraintVertical_bias="0.0" />

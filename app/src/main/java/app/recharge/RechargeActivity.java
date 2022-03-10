@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ public class RechargeActivity extends AppCompatActivity {
     EditText _txtsaisie, _txtcode;
     TextView _infoligne, _lblcode, _txtcommande, _txtconsult;
     Button _btncommande, _btnconsult;
-    String code;
+    String code, cmd_envoi, code_envoi;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,18 @@ public class RechargeActivity extends AppCompatActivity {
                     });
                 }
             }
+        });
+        _btncommande.setOnClickListener(view -> {
+            cmd_envoi = _txtcommande.getText().toString();
+            Intent i1 = new Intent(Intent.ACTION_DIAL);
+            i1.setData(Uri.parse("tel:" + cmd_envoi));
+            startActivity(i1);
+        });
+        _btnconsult.setOnClickListener(view -> {
+            code_envoi = _txtconsult.getText().toString();
+            Intent i2 = new Intent(Intent.ACTION_DIAL);
+            i2.setData(Uri.parse("tel:" + code_envoi));
+            startActivity(i2);
         });
     }
 }

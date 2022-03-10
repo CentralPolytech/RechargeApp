@@ -3,6 +3,7 @@ package app.recharge;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,12 +28,17 @@ public class MainActivity extends AppCompatActivity {
         _connect.setOnClickListener(view -> {
             login_envoi = _login.getText().toString();
             if (_password.getText().toString().equals(correctpassword)){
-                Intent i = new Intent(MainActivity.this, RechargeActivity.class);
-                i.putExtra(RechargeActivity.login_recu, login_envoi);
-                startActivity(i);
+                if (TextUtils.isEmpty(_login.getText())){
+                    Toast.makeText(MainActivity.this, "Saisir un Login !", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent i = new Intent(MainActivity.this, RechargeActivity.class);
+                    i.putExtra(RechargeActivity.login_recu, login_envoi);
+                    startActivity(i);
+                }
             }
             else {
-                Toast.makeText(MainActivity.this, "Identifiants incorrectes", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Identifiants incorrectes !", Toast.LENGTH_LONG).show();
             }
         });
     }

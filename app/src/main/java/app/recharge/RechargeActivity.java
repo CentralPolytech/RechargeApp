@@ -1,15 +1,18 @@
 package app.recharge;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RechargeActivity extends AppCompatActivity {
     public static String login_recu = "";
@@ -40,7 +43,7 @@ public class RechargeActivity extends AppCompatActivity {
 
         _txtsaisie.setOnFocusChangeListener((v, b) -> {
             if (!b){
-                if (Integer.parseInt(_txtsaisie.getText().toString()) >= 90000000 &
+                if (Integer.parseInt(_txtsaisie.getText().toString()) >= 90000000 &&
                         Integer.parseInt(_txtsaisie.getText().toString()) <= 99999999) {
                     _infoligne.setText("Votre ligne est: Tunisie Telecom");
                     _lblcode.setText("Entrer votre code de recharge: (13 chiffres)");
@@ -50,12 +53,19 @@ public class RechargeActivity extends AppCompatActivity {
                     _txtcommande.setTextColor(Color.WHITE);
                     _txtconsult.setBackgroundColor(Color.BLUE);
                     _txtconsult.setTextColor(Color.WHITE);
-                    _txtcode.setOnFocusChangeListener((v2, b2) -> {
-                        code = _txtcode.getText().toString();
-                        _txtcommande.setText("*123*"+code+"#");
+                    _txtcode.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            code = _txtcode.getText().toString();
+                            _txtcommande.setText("*123*"+code+"#");
+                        }
+                        @Override
+                        public void afterTextChanged(Editable editable) { }
                     });
                 }
-                else if (Integer.parseInt(_txtsaisie.getText().toString()) >= 20000000 &
+                else if (Integer.parseInt(_txtsaisie.getText().toString()) >= 20000000 &&
                         Integer.parseInt(_txtsaisie.getText().toString()) <= 29999999) {
                     _infoligne.setText("Votre ligne est: OoRedoO");
                     _lblcode.setText("Entrer votre code de recharge: (14 chiffres)");
@@ -65,12 +75,20 @@ public class RechargeActivity extends AppCompatActivity {
                     _txtcommande.setTextColor(Color.WHITE);
                     _txtconsult.setBackgroundColor(Color.RED);
                     _txtconsult.setTextColor(Color.WHITE);
-                    _txtcode.setOnFocusChangeListener((v2, b2) -> {
-                        code = _txtcode.getText().toString();
-                        _txtcommande.setText("*101*"+code+"#");
+                    _txtcode.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            code = _txtcode.getText().toString();
+                            _txtcommande.setText("*101*"+code+"#");
+                        }
+                        @Override
+                        public void afterTextChanged(Editable editable) { }
                     });
                 }
-                else {
+                else if (Integer.parseInt(_txtsaisie.getText().toString()) >= 30000000 &&
+                        Integer.parseInt(_txtsaisie.getText().toString()) <= 59999999) {
                     _infoligne.setText("Votre ligne est: Orange");
                     _lblcode.setText("Entrer votre code de recharge: (14 chiffres)");
                     _txtconsult.setText("*101#");
@@ -79,10 +97,23 @@ public class RechargeActivity extends AppCompatActivity {
                     _txtcommande.setTextColor(Color.BLACK);
                     _txtconsult.setBackgroundColor(Color.parseColor("#ff7f00"));
                     _txtconsult.setTextColor(Color.BLACK);
-                    _txtcode.setOnFocusChangeListener((v2, b2) -> {
-                        code = _txtcode.getText().toString();
-                        _txtcommande.setText("*100*"+code+"#");
+                    _txtcode.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            code = _txtcode.getText().toString();
+                            _txtcommande.setText("*100*"+code+"#");
+                        }
+                        @Override
+                        public void afterTextChanged(Editable editable) { }
                     });
+                }
+                else if (TextUtils.isEmpty(_txtsaisie.getText())){
+                    Toast.makeText(RechargeActivity.this, "Saisir un numéro !", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(RechargeActivity.this, "Vérifier votre saisie !", Toast.LENGTH_LONG).show();
                 }
             }
         });
